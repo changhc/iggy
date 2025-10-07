@@ -185,9 +185,9 @@ impl PostgresSource {
                 }
                 #[cfg(not(feature = "cdc_pg_replicate"))]
                 {
-                    Err(Error::InitError(
+                    return Err(Error::InitError(
                         "cdc_backend 'pg_replicate' requested but feature 'cdc_pg_replicate' is not enabled at build time".to_string(),
-                    ))
+                    ));
                 }
             }
             other => Err(Error::InitError(format!(
