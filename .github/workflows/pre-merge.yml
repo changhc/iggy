@@ -18,7 +18,7 @@
 name: Pre-merge
 on:
   pull_request:
-    branches: [master]
+    branches: [test-component]
   workflow_dispatch:
 
 env:
